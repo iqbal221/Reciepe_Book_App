@@ -26,6 +26,10 @@ class RecipeProvider extends ChangeNotifier {
   List<Recipe> _favoriteRecipes = [];
   List<Recipe> get favoriteRecipes => _favoriteRecipes;
 
+  RecipeProvider() {
+    loadFavorites();
+  }
+
   // fetch recipes by category
   Future<void> fetchRecipesByCategory(String category) async {
     _isLoadingCategory = true;
